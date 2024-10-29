@@ -1,2 +1,15 @@
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/wannagrindlikepablo/Linux-Hub/refs/heads/main/Protected_3991907640185803.txt')))()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/wannagrindlikepablo/Linux-Hub/refs/heads/main/Protected_7035434866972036.txt')))()
+local function runFirstScript()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/wannagrindlikepablo/Linux-Hub/refs/heads/main/Protected_3991907640185803.txt'))()
+end
+
+local function runSecondScript()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/wannagrindlikepablo/Linux-Hub/refs/heads/main/Protected_7035434866972036.txt'))()
+end
+
+-- Create coroutines to run scripts
+local co1 = coroutine.create(runFirstScript)
+local co2 = coroutine.create(runSecondScript)
+
+-- Run the coroutines
+coroutine.resume(co1)
+coroutine.resume(co2)
